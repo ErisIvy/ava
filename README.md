@@ -1,8 +1,6 @@
 
 # Auntie's Guide to Installing Windows 11
-by 
-- Eris "my sweet girl" Ivy
-- iFlex0x
+by Eris *"my sweet girl"* Ivy and iFlex0x
 
 ![Eris waving gif](/Wave.gif)
 
