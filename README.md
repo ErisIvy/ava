@@ -1,6 +1,8 @@
 
 # Auntie's Guide to Installing Windows 11
-by Eris "my sweet girl" Ivy and iFlex0x
+by 
+- Eris "my sweet girl" Ivy
+- iFlex0x
 
 ![Eris waving gif](/Wave.gif)
 
@@ -71,7 +73,7 @@ Windows will load for a minute and then show your desktop. Congratulations! We'r
 
 ### 4. Drivers and software
 
-You're at the desktop now. Windows is running on built-in drivers which will *function* but are recommended for daily usage, we so we need to install drivers. *Drivers* are little bits of code that help your software and hardware communicate effectively. Outdated drivers can cause bugs, graphical glitches, and instability so we'll need to update them as soon as we can.
+You're at the desktop now. Windows is running on built-in drivers which will *function* but are not recommended for daily usage, we so we need to install drivers. *Drivers* are little bits of code that help your software and hardware communicate effectively. Outdated drivers can cause bugs, graphical glitches, and instability so we'll need to update them as soon as we can.
 
 #### RAM
 
@@ -79,6 +81,7 @@ Your RAM (G.Skill Trident Z5) has a profile called '*AMD EXPO*' that needs to be
 
 The **BIOS** is a menu that's baked-in to your motherboard and allows you to tweak settings for your system as a whole; even before Windows 11 starts up.
 
+**Here's how to enter the BIOS and enable the XMP profile**
 - Shut down the computer and press the power button
 - As soon as the Gigabyte logo pops up, press the `delete` key repeatedly
 - Once in the **BIOS**, under "EASY MODE" look for the `XMP/EXPO` drop down option
