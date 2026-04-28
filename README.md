@@ -1,6 +1,8 @@
 
 # Auntie's Guide to Installing Windows 11
-by Eris "my sweet girl" Ivy, Age 23
+by 
+- Eris "my sweet girl" Ivy
+- iFlex0x
 
 ![Eris waving gif](/Wave.gif)
 
@@ -13,10 +15,11 @@ Which is nice to have, but the problem is that its the **default** storage. Any 
 
 To avoid this entirely we're just not going to log in with a Microsoft account. Normally this requires jumping through a bunch of hoops during setup — but we've already done the hard work for you. We used a tool called [Chris Titus's Win11 Creator](https://winutil.christitus.com/userguide/win11creator/) to patch a Windows 11 image that skips all of that nonsense automatically. Friends don't let friends use OneDrive <3
 
-**The install process I've organized into three chapters:**
+**The install process I've organized into four chapters:**
 - 1. Flashing Windows 11 to USB drive
 - 2. Installing Windows 11 on your computer
 - 3. First-time setup
+- 4. Drivers and software
 
 *Before we get started, remember the following:*
 
@@ -29,7 +32,6 @@ You can download it here: [drive.google.com/Win11_Modified_20260428.iso](https:/
 This is a modified `.iso` file — it has OneDrive removed, telemetry disabled, bloatware stripped out, and it's set up to let you create a local account without Microsoft getting involved. You don't need to do any of the manual bypass tricks that older guides describe.
 
 Alright cool, let's get started!
-
 ### 1. Flashing Windows 11 to USB drive
 - Download the [patched Windows 11 image](https://drive.google.com/file/d/1e-8eAAd9rGLksEZx1ISV3YMRGyfRbkkr/view?usp=sharing) linked above
 - Download and install [WinDiskWriter](https://github.com/TechUnRestricted/WinDiskWriter/releases/tag/v1.3)
@@ -66,23 +68,26 @@ This name will also be your computer's name. If you chose "Ava" the path to your
 
 - Enter your password
 - Fill out the security questions
-- In the "Choose privacy settings for your device" menu, **uncheck every single option**
 
 Windows will load for a minute and then show your desktop. Congratulations! We're in Windows 11!
 
 ### 4. Drivers and software
 
-You're at the desktop now. Windows is running but the hardware is kind of just sitting there confused, so we need to install drivers; which is basically just telling Windows what's actually inside the computer and how to talk to it.
+You're at the desktop now. Windows is running on built-in drivers which will *function* but are recommended for daily usage, we so we need to install drivers. *Drivers* are little bits of code that help your software and hardware communicate effectively. Outdated drivers can cause bugs, graphical glitches, and instability so we'll need to update them as soon as we can.
 
-**Before anything else: your RAM**
+#### RAM
 
-Your RAM (the G.Skill Trident Z5) has a profile called AMD EXPO that makes it run at the speed it was actually built for; 6000 MT/s. Out of the box Windows ignores this and runs it slower. Fixing it takes like thirty seconds and you do it in the BIOS before touching anything else.
+Your RAM (G.Skill Trident Z5) has a profile called '*AMD EXPO*' that needs to be enabled manually to run at the speed it was built for. Out of the box it will run slower than advertised but the fix is quite simple and it involves configuring the **BIOS**
 
-- Restart and press `Delete` repeatedly as the PC is booting to get into the BIOS
-- Find the **EXPO** option (it might be labeled XMP/EXPO) and enable it
-- Press `F10` to save and exit
+The **BIOS** is a menu that's baked-in to your motherboard and allows you to tweak settings for your system as a whole; even before Windows 11 starts up.
 
-It'll restart on its own and boot back into Windows. Done, you never have to think about it again.
+- Shut down the computer and press the power button
+- As soon as the Gigabyte logo pops up, press the `delete` key repeatedly
+- Once in the **BIOS**, under "EASY MODE" look for the `XMP/EXPO` drop down option
+- Click it and select the "**XMP 1**" option
+- Press `F10` on your keyboard to save and exit
+
+The computer will restart on it's own and boot back into Windows 11, now your ram will run at it's advertised speed and you won't have to think about it again.
 
 ---
 
@@ -105,7 +110,8 @@ While you're on that page, check the **BIOS** tab too and see if there's a newer
 
 NVIDIA's installer has a habit of bundling in things you genuinely do not want; GeForce Experience, a game capture tool, a screenshot app called Ansel, and multiple telemetry services that run in the background forever. The "custom install" option in NVIDIA's own installer doesn't actually let you remove most of it. We're going to use a free tool called NVcleanstall instead, which does.
 
-- Download [NVcleanstall](https://www.techpowerup.com/download/techpowerup-nvcleanstall/) and run it
+- Download [NVcleanstall](https://www.techpowerup.com/download/techpowerup-nvcleanstall/)
+- Click on the American flag icon with "closest to you" underneath it
 - It'll pull the latest driver for the RTX 5080 automatically
 - Before clicking next, switch the driver type from **Game Ready** to **Studio Driver** in the dropdown. Studio drivers are tested against creative software specifically and are more stable for that use case; since this PC isn't for gaming there's no reason to use Game Ready.
 - Click **Next** and you'll see the component list. Here's what to do with it:
