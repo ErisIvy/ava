@@ -134,13 +134,13 @@ Click through and install. Your screen will go black a couple times while it run
 
 **Corsair iCUE**
 
-The AIO (the LINK TITAN 360) and all the fans; the six LL120s on intake, the LL140 exhausting out the back, and the three AIO fans going out the top; are all managed through Corsair's iCUE software. Without it they'll run at a fixed speed with no curve and no way to adjust them.
+The AIO (the LINK TITAN 360) and all the fans; the six LX120s on intake, the LX140 exhausting out the back, and the three AIO fans going out the top; are all managed through Corsair's iCUE software. Without it they'll run at a fixed speed with no curve and no way to adjust them.
 
 - Download and install [Corsair iCUE](https://www.corsair.com/us/en/s/downloads)
 - It should pick up the AIO and fans automatically when it opens
 - Head into **Cooling** to set up a fan curve. For a PC that's mostly sitting at a desk being used for work, something that holds around 30-40% until temperatures hit 60°C and ramps from there keeps things quiet without sacrificing cooling when it matters.
 - **Lighting** is in there too if you want to set colors or just turn it all off
 
-The LL120s and the LL140 all connect through the LINK hub inside the case so they show up together as one group in iCUE rather than individually. Should be pretty intuitive from there.
+The LX120s and the LX140 all connect through the LINK hub inside the case so they show up together as one group in iCUE rather than individually. Should be pretty intuitive from there.
 
 ---
