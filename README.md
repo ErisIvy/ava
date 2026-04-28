@@ -109,7 +109,7 @@ While you're on that page, check the **BIOS** tab too and see if there's a newer
 
 NVIDIA App (the GPU driver installer by Nvidia) has a habit of bundling in extra software that is unnecessary and annoying; GeForce Experience, Ansel, and multiple telemetry services that run in the background constantly. Even the "custom install" option in NVIDIA's own app doesn't let you remove most if it. To avoid unnecessary bloat and telemetry, we're going to use a free tool called **NVCleanstall** instead.
 
-- Download [NVcleanstall](https://www.techpowerup.com/download/techpowerup-nvcleanstall/)
+- Download [NVCleanstall](https://www.techpowerup.com/download/techpowerup-nvcleanstall/)
 - Select the American flag icon with "closest to you" underneath it
 - Run NVCleanstall
 - Click **Next** on the bottom right
@@ -125,11 +125,11 @@ Everything else can be left unselected, click **Next** to continue.
 - click **Install** to begin installing the GPU drivers
 - Accept NVIDIA's terms and conditions
 - click **Next** on installation options (the recommended installation is "*Express*")
+	- The screen will turn black a few times as it finishes installing, this is normal and expected
+- Once the installation is finished, click **Close** on the Nvidia Driver Installer
+- click **Close** on NVCleanstall
 
-The screen may go black a few times as it's installing, this is normal and very common.
-
-
-Click through and install. Your screen will go black a couple times while it runs; that's normal.
+Now your GPU drivers are up to date!
 
 ---
 
