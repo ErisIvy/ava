@@ -86,7 +86,7 @@ The **BIOS** is a menu that's baked-in to your motherboard and allows you to twe
 - Click it and select the "**XMP 1**" option
 - Press `F10` on your keyboard to save and exit
 
-The computer will restart on it's own and boot back into Windows 11, now your ram will run at it's advertised speed and you won't have to think about it again.
+The computer will restart itself and boot back into Windows 11, now your ram will run at it's advertised speed and you won't have to think about it again.
 
 ---
 
@@ -105,28 +105,29 @@ While you're on that page, check the **BIOS** tab too and see if there's a newer
 
 ---
 
-**GPU drivers**
+**GPU Drivers**
 
-NVIDIA's installer has a habit of bundling in things you genuinely do not want; GeForce Experience, a game capture tool, a screenshot app called Ansel, and multiple telemetry services that run in the background forever. The "custom install" option in NVIDIA's own installer doesn't actually let you remove most of it. We're going to use a free tool called NVcleanstall instead, which does.
+NVIDIA App (the GPU driver installer by Nvidia) has a habit of bundling in extra software that is unnecessary and annoying; GeForce Experience, Ansel, and multiple telemetry services that run in the background constantly. Even the "custom install" option in NVIDIA's own app doesn't let you remove most if it. To avoid unnecessary bloat and telemetry, we're going to use a free tool called **NVCleanstall** instead.
 
 - Download [NVcleanstall](https://www.techpowerup.com/download/techpowerup-nvcleanstall/)
-- Click on the American flag icon with "closest to you" underneath it
-- It'll pull the latest driver for the RTX 5080 automatically
-- Before clicking next, switch the driver type from **Game Ready** to **Studio Driver** in the dropdown. Studio drivers are tested against creative software specifically and are more stable for that use case; since this PC isn't for gaming there's no reason to use Game Ready.
-- Click **Next** and you'll see the component list. Here's what to do with it:
+- Select the American flag icon with "closest to you" underneath it
+- Run NVCleanstall
+- Click **Next** on the bottom right
 
-Keep these:
-- `Display Driver`
-- `HD Audio via HDMI` (for audio through a monitor over DisplayPort or HDMI)
+in the "Select Components To Install" screen, enable the following:
+- `Display Driver (required)`
+- `HD Audio via HDMI`
 - `PhysX`
 
-Remove everything else:
-- `GeForce Experience` and/or `NVIDIA App`
-- `Telemetry`
-- `Ansel`
-- `Shadowplay` / `Highlights`
-- `USB-C Driver`
-- `3D Vision`
+Everything else can be left unselected, click **Next** to continue.
+- In "Installation Tweaks" leave everything unchecked
+- click **Next** to continue
+- click **Install** to begin installing the GPU drivers
+- Accept NVIDIA's terms and conditions
+- click **Next** on installation options (the recommended installation is "*Express*")
+
+The screen may go black a few times as it's installing, this is normal and very common.
+
 
 Click through and install. Your screen will go black a couple times while it runs; that's normal.
 
@@ -134,13 +135,13 @@ Click through and install. Your screen will go black a couple times while it run
 
 **Corsair iCUE**
 
-The AIO (the LINK TITAN 360) and all the fans; the six LX120s on intake, the LX140 exhausting out the back, and the three AIO fans going out the top; are all managed through Corsair's iCUE software. Without it they'll run at a fixed speed with no curve and no way to adjust them.
+The AIO (the LINK TITAN 360) and all the fans; the six LL120s on intake, the LL140 exhausting out the back, and the three AIO fans going out the top; are all managed through Corsair's iCUE software. Without it they'll run at a fixed speed with no curve and no way to adjust them.
 
 - Download and install [Corsair iCUE](https://www.corsair.com/us/en/s/downloads)
 - It should pick up the AIO and fans automatically when it opens
 - Head into **Cooling** to set up a fan curve. For a PC that's mostly sitting at a desk being used for work, something that holds around 30-40% until temperatures hit 60°C and ramps from there keeps things quiet without sacrificing cooling when it matters.
 - **Lighting** is in there too if you want to set colors or just turn it all off
 
-The LX120s and the LX140 all connect through the LINK hub inside the case so they show up together as one group in iCUE rather than individually. Should be pretty intuitive from there.
+The LL120s and the LL140 all connect through the LINK hub inside the case so they show up together as one group in iCUE rather than individually. Should be pretty intuitive from there.
 
 ---
