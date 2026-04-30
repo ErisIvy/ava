@@ -31,6 +31,8 @@ You can download it here: [drive.google.com/Win11_Modified_20260428.iso](https:/
 This is a modified `.iso` file — it has OneDrive removed, telemetry disabled, bloatware stripped out, and it's set up to let you create a local account without Microsoft getting involved. You don't need to do any of the manual bypass tricks that older guides describe.
 
 Alright cool, let's get started!
+
+---
 ### 1. Flashing Windows 11 to USB drive
 - Download the [patched Windows 11 image](https://drive.google.com/file/d/1e-8eAAd9rGLksEZx1ISV3YMRGyfRbkkr/view?usp=sharing) linked above
 - Download and install [WinDiskWriter](https://github.com/TechUnRestricted/WinDiskWriter/releases/tag/v1.3)
@@ -105,14 +107,34 @@ Go to the [Gigabyte X870 EAGLE WIFI7 support page](https://www.gigabyte.com/Moth
 3. **WLAN/Bluetooth Driver** — for WiFi and Bluetooth. The board shipped with a WiFi antenna; if it's not already plugged in, there are two gold screw connectors on the back of the case and the antenna cables attach there.
 4. **LAN Driver** — for the wired ethernet port.
 
+The motherboard has a few drivers that will need to be installed. These drivers help your motherboard--and all of the things connected to it--work better together. Go to the [Gigabyte X870 EAGLE WIFI7 support page](https://www.gigabyte.com/Motherboard/X870-EAGLE-WIFI7-rev-1x/support) and click the download icon for each of the following:
 
+- **AMD Chipset Driver**
+- **Realtek HD Audio Driver** 
+- **WLAN/Bluetooth Driver
+- **LAN Driver**
 
+These will download in `.zip` files and will need to *extracted*; you will need to install the **AMD Chipset Driver** first so let's start with that one:
 
+- Double click on the downloaded `mb_driver_597_chipset_7.12.04.858.zip` file
+- Once inside, click on "Extract all" towards the top of the window
+- in "Select a Destination and Extract files" go down the bottom right and click "Extract"
+	- (if needed, check "Show extracted files when complete")
+- Double click on the `.exe` file and continue through the setup
 
+Let the installer work it's magic and when it's finished you will be asked to restart your computer. We'll need to restart a few times throughout this process, skipping restarts can cause weird issues and problems down the line. It's annoying, but once you get all of this set up you will be golden.
 
-Restart after each one when it asks you to. I know it's annoying but skipping restarts causes weird problems down the line.
+Like how you extracted the files from the AMD Chipset `.zip` file, do the same exact process for the rest of the drivers. Unlike the chipset driver, *you can install these in any order* but to keep in line with the guide let's start with the **Realtek HD Audio Driver**. Same process as before:
 
-While you're on that page, check the **BIOS** tab too and see if there's a newer version than what's on the board. Updating it isn't required right now but it's worth doing at some point; it usually improves memory compatibility and fixes things Gigabyte caught after launch. There are instructions on the page for how to flash it from a USB drive.
+- Double click on the downloaded `mb_driver_612_realtekdch_6.0.9927.1.zip` file
+- Once inside, click on "Extract all" towards the top of the window
+- in "Select a Destination and Extract files" go down the bottom right and click "Extract"
+	- (if needed, check "Show extracted files when complete")
+- Double click on the `.exe` file and continue through the setup
+
+Rinse-and-repeat this process for the **WLAN/Bluetooth Driver** and the **LAN Driver** and you'll be finished with motherboard drivers.
+
+Back on the [Gigabyte X870 EAGLE WIFI7 support page](https://www.gigabyte.com/Motherboard/X870-EAGLE-WIFI7-rev-1x/support) on the left side, click on the **BIOS** tab to see if there is a newer version than what's on the board. Updating it isn't *required* but its worth doing at some point; it usually improves memory compatibility and fixes things that the manufacturer--Gigabyte--caught after launch. There will be instructions on how to update your BIOS from a USB drive if you need to do it.
 
 ---
 
