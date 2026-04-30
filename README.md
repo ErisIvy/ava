@@ -76,7 +76,7 @@ Windows will load for a minute and then show your desktop. Congratulations! We'r
 
 You're at the desktop now! Windows 11 is currently running on it's built-in drivers which will *function* but are not recommended for daily usage, so we need to install drivers. *Drivers* are little bits of code that help your software and hardware communicate effectively. Outdated drivers can cause bugs, graphical glitches, and instability so we'll need to update them as soon as we can.
 
-The tweaks drivers we'll be installing will be organized in three chapters
+The tweaks and drivers we'll be installing will be organized in three chapters
 - 1. RAM 
 - 2. Motherboard Drivers
 - 3. Graphics Card (GPU) Drivers
@@ -99,13 +99,6 @@ The computer will restart itself and boot back into Windows 11, now your ram wil
 ---
 
 #### 2. Motherboard Drivers
-
-Go to the [Gigabyte X870 EAGLE WIFI7 support page](https://www.gigabyte.com/Motherboard/X870-EAGLE-WIFI7-rev-1x/support) and click the Driver tab. You want these four, installed in this order:
-
-1. **AMD Chipset Driver** — do this one first. It's the most foundational thing on the list and the rest of the drivers will behave better after it's in. Restart when it asks.
-2. **Realtek HD Audio Driver** — for the audio ports on the back panel.
-3. **WLAN/Bluetooth Driver** — for WiFi and Bluetooth. The board shipped with a WiFi antenna; if it's not already plugged in, there are two gold screw connectors on the back of the case and the antenna cables attach there.
-4. **LAN Driver** — for the wired ethernet port.
 
 The motherboard has a few drivers that will need to be installed. These drivers help your motherboard--and all of the things connected to it--work better together. Go to the [Gigabyte X870 EAGLE WIFI7 support page](https://www.gigabyte.com/Motherboard/X870-EAGLE-WIFI7-rev-1x/support) and click the download icon for each of the following:
 
