@@ -103,8 +103,8 @@ The computer will restart itself and boot back into Windows 11, now your ram wil
 The motherboard has a few drivers that will need to be installed. These drivers help your motherboard--and all of the things connected to it--work better together. Go to the [Gigabyte X870 EAGLE WIFI7 support page](https://www.gigabyte.com/Motherboard/X870-EAGLE-WIFI7-rev-1x/support) and click the download icon for each of the following:
 
 - **AMD Chipset Driver**
-- **Realtek HD Audio Driver** 
-- **WLAN/Bluetooth Driver
+- **Realtek HD Audio Driver**
+- **WLAN/Bluetooth Driver**
 - **LAN Driver**
 
 These will download in `.zip` files and will need to *extracted*; you will need to install the **AMD Chipset Driver** first so let's start with that one:
