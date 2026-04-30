@@ -13,11 +13,12 @@ Which is nice to have, but the problem is that its the **default** storage. Any 
 
 To avoid this entirely we're just not going to log in with a Microsoft account. Normally this requires jumping through a bunch of hoops during setup — but we've already done the hard work for you. We used a tool called [Chris Titus's Win11 Creator](https://winutil.christitus.com/userguide/win11creator/) to patch a Windows 11 image that skips all of that nonsense automatically. Friends don't let friends use OneDrive <3
 
-**The install process I've organized into four chapters:**
+**The install process I've organized into three chapters:**
 - 1. Flashing Windows 11 to USB drive
 - 2. Installing Windows 11 on your computer
 - 3. First-time setup
-- 4. Drivers and software
+
+and after that, a guide on how to tweak your BIOS and install drivers so your computer is working to it's full potential!
 
 *Before we get started, remember the following:*
 
@@ -69,11 +70,16 @@ This name will also be your computer's name. If you chose "Ava" the path to your
 
 Windows will load for a minute and then show your desktop. Congratulations! We're in Windows 11!
 
-### 4. Drivers and software
+# Windows Driver Installation
 
-You're at the desktop now. Windows is running on built-in drivers which will *function* but are not recommended for daily usage, we so we need to install drivers. *Drivers* are little bits of code that help your software and hardware communicate effectively. Outdated drivers can cause bugs, graphical glitches, and instability so we'll need to update them as soon as we can.
+You're at the desktop now! Windows 11 is currently running on it's built-in drivers which will *function* but are not recommended for daily usage, so we need to install drivers. *Drivers* are little bits of code that help your software and hardware communicate effectively. Outdated drivers can cause bugs, graphical glitches, and instability so we'll need to update them as soon as we can.
 
-#### RAM
+The tweaks drivers we'll be installing will be organized in three chapters
+- 1. RAM 
+- 2. Motherboard Drivers
+- 3. Graphics Card (GPU) Drivers
+
+#### 1. RAM
 
 Your RAM (G.Skill Trident Z5) has a profile called '*AMD EXPO*' that needs to be enabled manually to run at the speed it was built for. Out of the box it will run slower than advertised but the fix is quite simple and it involves configuring the **BIOS**
 
@@ -90,7 +96,7 @@ The computer will restart itself and boot back into Windows 11, now your ram wil
 
 ---
 
-**Motherboard drivers**
+#### 2. Motherboard Drivers
 
 Go to the [Gigabyte X870 EAGLE WIFI7 support page](https://www.gigabyte.com/Motherboard/X870-EAGLE-WIFI7-rev-1x/support) and click the Driver tab. You want these four, installed in this order:
 
@@ -99,15 +105,20 @@ Go to the [Gigabyte X870 EAGLE WIFI7 support page](https://www.gigabyte.com/Moth
 3. **WLAN/Bluetooth Driver** — for WiFi and Bluetooth. The board shipped with a WiFi antenna; if it's not already plugged in, there are two gold screw connectors on the back of the case and the antenna cables attach there.
 4. **LAN Driver** — for the wired ethernet port.
 
+
+
+
+
+
 Restart after each one when it asks you to. I know it's annoying but skipping restarts causes weird problems down the line.
 
 While you're on that page, check the **BIOS** tab too and see if there's a newer version than what's on the board. Updating it isn't required right now but it's worth doing at some point; it usually improves memory compatibility and fixes things Gigabyte caught after launch. There are instructions on the page for how to flash it from a USB drive.
 
 ---
 
-**GPU Drivers**
+#### 3. Graphics Card (GPU) Drivers
 
-NVIDIA App (the GPU driver installer by Nvidia) has a habit of bundling in extra software that is unnecessary and annoying; GeForce Experience, Ansel, and multiple telemetry services that run in the background constantly. Even the "custom install" option in NVIDIA's own app doesn't let you remove most if it. To avoid unnecessary bloat and telemetry, we're going to use a free tool called **NVCleanstall** instead.
+NVIDIA App (the GPU driver installer by Nvidia) has a habit of bundling in extra software that is unnecessary and annoying; GeForce Experience, Ansel, and multiple telemetry services that run in the background constantly. To avoid unnecessary bloat and telemetry, we're going to use a free tool called **NVCleanstall** instead.
 
 - Download [NVCleanstall](https://www.techpowerup.com/download/techpowerup-nvcleanstall/)
 - Select the American flag icon with "closest to you" underneath it
