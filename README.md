@@ -1,4 +1,3 @@
-
 # Auntie's Guide to Installing Windows 11
 by Eris *"my sweet girl"* Ivy and iFlex0x
 
@@ -11,7 +10,7 @@ Unlike MacOS, Windows is notorious for bloatware, ads, telemetry, and overall ju
 The biggest problem with Windows 11 is the mandatory use of a Microsoft account to log in. **We are not going to be doing this**, for a multitude of reasons. On Windows 11, there is a program that auto-backups files to the cloud; similar to MacOS' iCloud. 
 Which is nice to have, but the problem is that its the **default** storage. Any file you download will quietly back itself up and a couple weeks down the line you'll be pestered to "**upgrade your OneDrive storage**".
 
-To avoid this entirely we're just not going to log in with a Microsoft account. Normally this requires jumping through a bunch of hoops during setup — but we've already done the hard work for you. We used a tool called [Chris Titus's Win11 Creator](https://winutil.christitus.com/userguide/win11creator/) to patch a Windows 11 image that skips all of that nonsense automatically. Friends don't let friends use OneDrive <3
+To avoid this entirely we're just not going to log in with a Microsoft account. Normally this requires jumping through a bunch of hoops during setup - but we've already done the hard work for you. We used a tool called [Chris Titus's Win11 Creator](https://winutil.christitus.com/userguide/win11creator/) to patch a Windows 11 image that skips all of that nonsense automatically. Friends don't let friends use OneDrive <3
 
 **The install process I've organized into three chapters:**
 - 1. Flashing Windows 11 to USB drive
@@ -26,15 +25,32 @@ and after that, a guide on how to tweak your BIOS and install drivers so your co
 - ***DO NOT GIVE ANY PERSONAL INFORMATION OR DATA TO MICROSOFT***
 
 I've already patched a Windows 11 image using Win11 Creator and uploaded it for you. 
-You can download it here: [drive.google.com/Win11_Modified_20260428.iso](https://drive.google.com/file/d/1e-8eAAd9rGLksEZx1ISV3YMRGyfRbkkr/view?usp=sharing) (*7.07 GB*)
+You can download it here: [swisstransfer.com/d/Windows](https://www.swisstransfer.com/d/5067b135-0c8b-4ffd-96ac-e6dbd9cd4c63) (*7.07 GB*)
 
-This is a modified `.iso` file — it has OneDrive removed, telemetry disabled, bloatware stripped out, and it's set up to let you create a local account without Microsoft getting involved. You don't need to do any of the manual bypass tricks that older guides describe.
+This is a modified `.iso` file - it has OneDrive removed, telemetry disabled, bloatware stripped out, and it's set up to let you create a local account without Microsoft getting involved. You don't need to do any of the manual bypass tricks that older guides describe.
 
 Alright cool, let's get started!
 
 ---
+### Before You Start: WiFi Antennas
+
+When we built the PC we didn't get around to installing the WiFi antennas, so let's do that now before anything else. They're in the motherboard box and look like little paddles on a short cable with a screw-on connector.
+
+- On the back of the PC (the I/O panel, where all the ports are) look for two small gold-colored round connectors close together - these are the antenna ports
+- Screw each antenna onto its connector by hand. Finger-tight is all you need, don't force them
+- Stand them upright or angle them slightly outward once they're on
+
+That's it, WiFi is ready to go.
+
+---
+
+![Ava dancing](/avadance.gif)
+
+*btw - congrats on building your first PC!! posting on the first troubleshoot try is a huge win, most people don't get that lucky and have to unplug and troubleshoot while nervous, anyways now let's get Windows on it :)*
+
+---
 ### 1. Flashing Windows 11 to USB drive
-- Download the [patched Windows 11 image](https://drive.google.com/file/d/1e-8eAAd9rGLksEZx1ISV3YMRGyfRbkkr/view?usp=sharing) linked above
+- Download the [patched Windows 11 image](https://www.swisstransfer.com/d/5067b135-0c8b-4ffd-96ac-e6dbd9cd4c63) linked above
 - Download and install [WinDiskWriter](https://github.com/TechUnRestricted/WinDiskWriter/releases/tag/v1.3)
 	- You may need to allow this program to run by going into "Privacy & Security" in your system settings. Scroll down to "Security" and click "Open Anyway"
 - Plug your USB drive into your Mac
@@ -46,19 +62,21 @@ Alright cool, let's get started!
 
 ### 2. Installing Windows 11 on your computer
 
-- Plug the USB drive into a front USB port
+- Plug the USB drive into a USB port
 - Power on the computer
+
+> ⚠️ **Heads up** - because the processor is an X3D chip, the motherboard will pop up a message on the very first boot asking if you want to enable **X3D Turbo Mode**. This is a Gigabyte performance feature built specifically for X3D processors and it's worth having on. **Say yes.** The PC will restart once on its own and then boot normally into the Windows installer.
+
 - Go through the install as normal for language and keyboard layout
 	- If asked for a key, say "I don't have a product key" 
-- Choose "Install Windows 11 Home"
-	- If asked, install on `WD_Black SN850X` or whatever your SSD shows up as
+	- Follow instructions given by iFlex for disk partioning 
 - Accept the terms and install
 
 Windows will take a few minutes to install, and then reboot into the setup screen.
 
 ### 3. First-time setup
 
-Because the image is already patched, Windows will handle most of the annoying stuff on its own. You won't need to do any terminal tricks or disconnect from the internet — it's already taken care of.
+Because the image is already patched, Windows will handle most of the annoying stuff on its own. You won't need to do any terminal tricks or disconnect from the internet - it's already taken care of.
 
 Just go through the setup normally:
 
@@ -72,33 +90,18 @@ This name will also be your computer's name. If you chose "Ava" the path to your
 
 Windows will load for a minute and then show your desktop. Congratulations! We're in Windows 11!
 
+- Note : Chris Titus's patcher will restart the PC here, wait for it to complete it's patching.
+
 # Windows Driver Installation
 
 You're at the desktop now! Windows 11 is currently running on it's built-in drivers which will *function* but are not recommended for daily usage, so we need to install drivers. *Drivers* are little bits of code that help your software and hardware communicate effectively. Outdated drivers can cause bugs, graphical glitches, and instability so we'll need to update them as soon as we can.
 
 The tweaks and drivers we'll be installing will be organized in three chapters
-- 1. RAM 
-- 2. Motherboard Drivers
-- 3. Graphics Card (GPU) Drivers
+- 1. Motherboard Drivers
+- 2. Graphics Card (GPU) Drivers
+- 3. BIOS Update & Configuration
 
-#### 1. RAM
-
-Your RAM (G.Skill Trident Z5) has a profile called '*AMD EXPO*' that needs to be enabled manually to run at the speed it was built for. Out of the box it will run slower than advertised but the fix is quite simple and it involves configuring the **BIOS**
-
-The **BIOS** is a menu that's baked-in to your motherboard and allows you to tweak settings for your system as a whole; even before Windows 11 starts up.
-
-**Here's how to enter the BIOS and enable the XMP profile**
-- Shut down the computer and press the power button
-- As soon as the Gigabyte logo pops up, press the `delete` key repeatedly
-- Once in the **BIOS**, under "EASY MODE" look for the `XMP/EXPO` drop down option
-- Click it and select the "**XMP 1**" option
-- Press `F10` on your keyboard to save and exit
-
-The computer will restart itself and boot back into Windows 11, now your ram will run at it's advertised speed and you won't have to think about it again.
-
----
-
-#### 2. Motherboard Drivers
+#### 1. Motherboard Drivers
 
 The motherboard has a few drivers that will need to be installed. These drivers help your motherboard--and all of the things connected to it--work better together. Go to the [Gigabyte X870 EAGLE WIFI7 support page](https://www.gigabyte.com/Motherboard/X870-EAGLE-WIFI7-rev-1x/support) and click the download icon for each of the following:
 
@@ -127,11 +130,9 @@ Like how you extracted the files from the AMD Chipset `.zip` file, do the same e
 
 Rinse-and-repeat this process for the **WLAN/Bluetooth Driver** and the **LAN Driver** and you'll be finished with motherboard drivers.
 
-Back on the [Gigabyte X870 EAGLE WIFI7 support page](https://www.gigabyte.com/Motherboard/X870-EAGLE-WIFI7-rev-1x/support) on the left side, click on the **BIOS** tab to see if there is a newer version than what's on the board. Updating it isn't *required* but its worth doing at some point; it usually improves memory compatibility and fixes things that the manufacturer--Gigabyte--caught after launch. There will be instructions on how to update your BIOS from a USB drive if you need to do it.
-
 ---
 
-#### 3. Graphics Card (GPU) Drivers
+#### 2. Graphics Card (GPU) Drivers
 
 NVIDIA App (the GPU driver installer by Nvidia) has a habit of bundling in extra software that is unnecessary and annoying; GeForce Experience, Ansel, and multiple telemetry services that run in the background constantly. To avoid unnecessary bloat and telemetry, we're going to use a free tool called **NVCleanstall** instead.
 
@@ -159,15 +160,92 @@ Now your GPU drivers are up to date!
 
 ---
 
+#### 3. BIOS Update & Configuration
+
+**Updating the BIOS**
+
+Back on the [Gigabyte X870 EAGLE WIFI7 support page](https://www.gigabyte.com/Motherboard/X870-EAGLE-WIFI7-rev-1x/support) on the left side, click on the **BIOS** tab to see if there is a newer version than what's on the board. Updating it isn't *required* but its worth doing at some point; it usually improves memory compatibility and fixes things that the manufacturer--Gigabyte--caught after launch. There will be instructions on how to update your BIOS from a USB drive if you need to do it.
+
+---
+
+**Enabling your RAM's EXPO profile**
+
+Your RAM (G.Skill Trident Z5 Neo RGB) has a profile called '*AMD EXPO*' that needs to be enabled manually to run at the speed it was built for. Out of the box it will run slower than advertised but the fix is quite simple and it involves going back into the **BIOS**.
+
+**Here's how to enter the BIOS and enable EXPO**
+- Shut down the computer and press the power button
+- As soon as the Gigabyte logo pops up, press the `Delete` key repeatedly until the BIOS opens
+- The BIOS will open in **Easy Mode** by default - press `F2` on your keyboard to switch to **Advanced Mode**
+- At the top of the screen you'll see a row of tabs. Click on **Tweaker** (second tab from the left)
+- Scroll down until you find **XMP/EXPO Profile** - it'll show as `Disabled`
+- Click it and select **EXPO I** from the dropdown
+- Press `F10` on your keyboard to save and exit
+
+The computer will restart itself and boot back into Windows 11, now your RAM will run at it's advertised speed and you won't have to think about it again.
+
+---
+
 **Corsair iCUE**
 
-The AIO (the LINK TITAN 360) and all the fans; the six LL120s on intake, the LL140 exhausting out the back, and the three AIO fans going out the top; are all managed through Corsair's iCUE software. Without it they'll run at a fixed speed with no curve and no way to adjust them.
+The AIO (the LINK TITAN 360) and all the fans - the three LX120 reverse fans on the front intake, the three LX120s on the bottom intake, the LX140 exhausting out the back, and the three RX radiator fans on the AIO pushing out the top - are all managed through Corsair's iCUE software. Without it they'll run at a fixed speed with no curve and no way to adjust them.
 
 - Download and install [Corsair iCUE](https://www.corsair.com/us/en/s/downloads)
 - It should pick up the AIO and fans automatically when it opens
 - Head into **Cooling** to set up a fan curve. For a PC that's mostly sitting at a desk being used for work, something that holds around 30-40% until temperatures hit 60°C and ramps from there keeps things quiet without sacrificing cooling when it matters.
 - **Lighting** is in there too if you want to set colors or just turn it all off
 
-The LL120s and the LL140 all connect through the LINK hub inside the case so they show up together as one group in iCUE rather than individually. Should be pretty intuitive from there.
+All the fans and the AIO connect through the iCUE LINK hub inside the case so they show up together as one group in iCUE rather than individually. Should be pretty intuitive from there.
 
+---
+
+**Native NVMe Driver**
+
+Windows has a newer, faster driver for NVMe SSDs sitting inside it that it doesn't turn on by default. Enabling it skips a layer of old translation code that Windows has been using since before NVMe even existed, which means faster random read/write speeds and lower CPU overhead when the drive is working hard. Worth enabling.
+
+This one I'll walk you through when we're setting up together, but here's what the process looks like so you know what to expect:
+
+- We'll download **ViVeTool** from [github.com/thebookisclosed/ViVe](https://github.com/thebookisclosed/ViVe/releases) and extract it somewhere easy to find, like your Desktop
+- Open **Windows Terminal** as Administrator (right-click the Start button, click "Terminal (Admin)")
+- Navigate to where ViVeTool is extracted - type `cd` followed by the folder path, for example `cd C:\Users\Ava\Desktop\ViVeTool`
+- Run the following command:
+```
+.\vivetool /enable /id:60786016,48433719
+```
+- Once it confirms, close the window and restart the PC
+
+After the restart, if you open **Device Manager** (right-click Start > Device Manager) your SSD should now appear under **"Storage disks"** instead of **"Disk drives"** - that means the new driver is active.
+
+> If anything looks off after the restart, let me know and we can undo it just as easily.
+
+---
+
+**WinUtil**
+
+Now that the drivers are sorted, this is where we make the actual cleanup happen. WinUtil is a tool made by the same guy who built the Win11 Creator we used to make your installer. It has a bulk app installer, privacy tweaks, and a bunch of other stuff baked into one window.
+
+**To open it:**
+- Right-click the Start button and click **"Terminal (Admin)"**
+- Paste the following and press Enter:
+```
+irm https://christitus.com/win | iex
+```
+- A window will pop up after a few seconds
+
+**Install tab**
+
+This is the easiest way to get a bunch of apps installed at once without hunting for installers or dealing with bundled junk. Check off everything you want and hit **Install** at the bottom - it handles the rest.
+
+Some things to look for:
+- **Discord**
+- **Blender**
+- **7-Zip**
+- **Your browser of choice** (Firefox, Brave, etc.)
+- **VLC** (for video files)
+
+**Tweaks tab**
+Follow instructions given by iFlex
+
+
+
+Done ?
 ---
