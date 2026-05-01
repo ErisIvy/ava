@@ -44,7 +44,7 @@ That's it, WiFi is ready to go.
 
 ---
 
-![Ava dancing](/avadance.gif)
+<img src="/avadance.gif" alt="Ava dancing" width="300" />
 
 *btw - congrats on building your first PC!! posting on the first troubleshoot try is a huge win, most people don't get that lucky and have to unplug and troubleshoot while nervous, anyways now let's get Windows on it :)*
 
